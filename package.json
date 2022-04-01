@@ -53,5 +53,6 @@
 	"repository": {
 	  "type": "git",
 	  "url": "git://github.com/gidragir/django-command-shortcuts.git"
-	}
+	},
+	"publisher": "Gidragir"
 }
