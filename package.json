@@ -10,14 +10,28 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:django-command-shortcuts.helloWorld"
+        "onCommand:django-command-shortcuts.runserver",
+        "onCommand:django-command-shortcuts.makemigrations",
+        "onCommand:django-command-shortcuts.migrate",
+        "onCommand:django-command-shortcuts.env"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [{
-            "command": "django-command-shortcuts.helloWorld",
-            "title": "Hello World"
-
+            "command": "django-command-shortcuts.runserver",
+            "title": "runserver"
+		},
+		{
+            "command": "django-command-shortcuts.makemigrations",
+            "title": "makemigrations"
+		},
+		{
+            "command": "django-command-shortcuts.migrate",
+            "title": "migrate"
+		},
+		{
+            "command": "django-command-shortcuts.env",
+            "title": "env"
 		}]
 	},
 	"scripts": {
