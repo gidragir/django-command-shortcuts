@@ -1,6 +1,6 @@
-# django-command-shortcuts README
+# Django commnd shortcuts
 
-This is the README for your extension "django-command-shortcuts". After writing up a brief description, we recommend including the following sections.
+Extension for fast work with Django.
 
 ## Features
 
