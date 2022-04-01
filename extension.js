@@ -27,7 +27,7 @@ function activate(context) {
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
 				sendTextToTerminal(result, uriFolder, 'makemigrations');
-			})
+			});
 		}
 	});
 
@@ -35,13 +35,13 @@ function activate(context) {
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
 				sendTextToTerminal(result, uriFolder, 'migrate');
-			})
+			});
 		}
 	});
 
 	let env = vscode.commands.registerCommand('django-command-shortcuts.env', function () {
 		if (vscode.window.activeTerminal) {
-			vscode.window.activeTerminal.sendText('./env/Scripts/Activate.ps1')
+			vscode.window.activeTerminal.sendText('./env/Scripts/Activate.ps1');
 		}
 	});
 
