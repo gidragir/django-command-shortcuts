@@ -34,6 +34,24 @@
         "command": "django-command-shortcuts.env",
         "title": "env"
       }
+    ],
+    "keybindings": [
+      {
+        "key": "Ctrl+Alt+Z",
+        "command": "django-command-shortcuts.env"
+      },
+      {
+        "key": "Ctrl+Alt+X",
+        "command": "django-command-shortcuts.runserver" 
+      },
+      {
+        "key": "Ctrl+Alt+C",
+        "command": "django-command-shortcuts.makemigrations" 
+      },
+      {
+        "key": "Ctrl+Alt+V",
+        "command": "django-command-shortcuts.migrate"
+      }
     ]
   },
   "scripts": {

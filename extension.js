@@ -41,11 +41,7 @@ function activate(context) {
 
 	let env = vscode.commands.registerCommand('django-command-shortcuts.env', function () {
 		if (vscode.window.activeTerminal) {
-			vscode.workspace.findFiles('*/Activate.ps1', uriFolder).then(function (result) {
-				let path = result[0].path;
-				let pureUri = path.replace(uriFolder, '.')
-				vscode.window.activeTerminal.sendText(pureUri)
-			});
+			vscode.window.activeTerminal.sendText('./env/Scripts/Activate.ps1');
 		}
 	});
 
