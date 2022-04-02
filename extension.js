@@ -6,19 +6,19 @@ const vscode = require('vscode');
 
 function activate(context) {
 
-	function sendTextToTerminal(result, uriFolder, command) {
+	let uriFolder = vscode.workspace.workspaceFolders[0].uri.path;
+
+	function sendTextToTerminal(result, command) {
 		let path = result[0].path;
 		let pureUri = path.replace(uriFolder, '.')
 		vscode.window.activeTerminal.sendText('python ' + pureUri + ' ' + command)
 	}
 
-	let uriFolder = vscode.workspace.workspaceFolders[0].uri.path;
-
 	let runserver = vscode.commands.registerCommand('django-command-shortcuts.runserver', function () {
 
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
-				sendTextToTerminal(result, uriFolder, 'runserver');
+				sendTextToTerminal(result, 'runserver');
 			})
 		}
 	});
@@ -26,7 +26,7 @@ function activate(context) {
 	let makemigrations = vscode.commands.registerCommand('django-command-shortcuts.makemigrations', function () {
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
-				sendTextToTerminal(result, uriFolder, 'makemigrations');
+				sendTextToTerminal(result, 'makemigrations');
 			});
 		}
 	});
@@ -34,14 +34,18 @@ function activate(context) {
 	let migrate = vscode.commands.registerCommand('django-command-shortcuts.migrate', function () {
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
-				sendTextToTerminal(result, uriFolder, 'migrate');
+				sendTextToTerminal(result, 'migrate');
 			});
 		}
 	});
 
 	let env = vscode.commands.registerCommand('django-command-shortcuts.env', function () {
 		if (vscode.window.activeTerminal) {
-			vscode.window.activeTerminal.sendText('./env/Scripts/Activate.ps1');
+			vscode.workspace.findFiles('*/Activate.ps1', uriFolder).then(function (result) {
+				let path = result[0].path;
+				let pureUri = path.replace(uriFolder, '.')
+				vscode.window.activeTerminal.sendText(pureUri)
+			});
 		}
 	});
 
