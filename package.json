@@ -2,7 +2,7 @@
   "name": "django-command-shortcuts",
   "displayName": "Django command shortcuts",
   "description": "",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.66.0"
   },
@@ -42,11 +42,11 @@
       },
       {
         "key": "Ctrl+Alt+X",
-        "command": "django-command-shortcuts.runserver" 
+        "command": "django-command-shortcuts.runserver"
       },
       {
         "key": "Ctrl+Alt+C",
-        "command": "django-command-shortcuts.makemigrations" 
+        "command": "django-command-shortcuts.makemigrations"
       },
       {
         "key": "Ctrl+Alt+V",
