@@ -45,10 +45,19 @@ function activate(context) {
 		}
 	});
 
+	let shell = vscode.commands.registerCommand('django-command-shortcuts.shell', function () {
+		if (vscode.window.activeTerminal) {
+			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
+				sendTextToTerminal(result, 'shell');
+			});
+		}
+	});
+
 	context.subscriptions.push(runserver);
 	context.subscriptions.push(makemigrations);
 	context.subscriptions.push(migrate);
 	context.subscriptions.push(env);
+	context.subscriptions.push(shell);
 }
 
 function deactivate() {}

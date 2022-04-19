@@ -33,6 +33,10 @@
       {
         "command": "django-command-shortcuts.env",
         "title": "env"
+      },
+      {
+        "command": "django-command-shortcuts.shell",
+        "title": "shell"
       }
     ],
     "keybindings": [
@@ -51,6 +55,10 @@
       {
         "key": "Ctrl+Alt+V",
         "command": "django-command-shortcuts.migrate"
+      },
+      {
+        "key": "Ctrl+Alt+S",
+        "command": "django-command-shortcuts.shell"
       }
     ]
   },
