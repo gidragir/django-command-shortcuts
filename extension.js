@@ -45,7 +45,7 @@ function activate(context) {
 		}
 	});
 
-	let shell = vscode.commands.registerCommand('django-command-shortcuts.shell', function () {
+	let shell = vscode.commands.registerCommand('django-command-shortcuts.shellФ', function () {
 		if (vscode.window.activeTerminal) {
 			vscode.workspace.findFiles('*/manage.py', uriFolder).then(function (result) {
 				sendTextToTerminal(result, 'shell');
